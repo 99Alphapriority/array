@@ -10,6 +10,8 @@ void run_tests()
 	test_insert();
 	test_delete();
 	test_search();
+	test_get();
+	test_set();
 }
 	
 
@@ -62,4 +64,32 @@ void test_search()
 		printf("element %d not present in the array\n",element);
 	printf("test_search() finished\n");
 
+}
+
+void test_get()
+{
+	int idx = 0, element = 0;
+	printf("\ntest_get() started\n");
+	printf("Enter index to check value:\t");
+	scanf("%d",&idx);
+	element = get(idx);
+	if(element < 0)
+		printf("index %d is empty\n",idx);
+	else
+		printf("%d is present at index %d\n",element,idx);
+	printf("test_get() finished\n");
+}
+
+void test_set()
+{
+	int idx = 0,value = 0; 
+	printf("\ntest_set() started\n");
+	printf("Enter index to change:\t");
+	scanf("%d",&idx);
+	printf("Enter value to change at index %d:\t");
+	scanf("%d",&value);
+	set(idx,value);
+	printf("array after set operation:\n");
+	display_array();
+	printf("\ntest_set() finished()\n");
 }

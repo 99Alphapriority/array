@@ -62,3 +62,20 @@ int search_element(int element)
 	}
 	return -1;
 }
+
+int get(int idx)
+{
+	if(idx >= last_element_idx)
+		return -1;
+	else
+		return arrayt_gp->arr[idx];
+}
+
+void set(int idx, int value)
+{
+	arrayt_gp->arr[idx] = value;
+	if(idx == last_element_idx)
+		last_element_idx++;
+	else if(idx > last_element_idx)
+		last_element_idx = idx + 1;
+}
